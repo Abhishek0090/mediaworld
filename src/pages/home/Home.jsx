@@ -2,10 +2,208 @@ import "./home.scss";
 
 const Home = () => {
   return (
-    <div>
-    
-        This is Home page
-    
+    <div className="home">
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+      <h1>
+
+        Home
+      </h1>
+
     </div>
   )
 }
