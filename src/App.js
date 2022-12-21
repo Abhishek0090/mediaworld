@@ -13,6 +13,9 @@ import LeftBar from "./components/leftBar/LeftBar";
 import RightBar from "./components/rightBar/RightBar";
 import Home from "./pages/home/Home";
 import Profile from "./pages/profile/Profile";
+import { useContext } from "react";
+import './style.scss';
+
 
 function App() {
 
@@ -20,7 +23,7 @@ function App() {
 
   const Layout = () => {
     return (
-      <div>
+      <div className="theme-dark">
         <Navbar />
         <div style={{ display: 'flex' }}>
           <LeftBar />
@@ -50,7 +53,6 @@ function App() {
       </ProtectedRoute>,
       children: [   // children for deciding paths using outlets
         {
-
           path: "/",
           element: <Home />
         },
