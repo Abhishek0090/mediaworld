@@ -25,7 +25,7 @@ const Navbar = () => {
     <div className="navbar">
       <div className="left">
         <Link to="/" style={{ textDecoration: "none" }}>
-          <span>🤣</span>
+          <span>AbhiCodex</span>
 
         </Link>
         <HomeOutlinedIcon />

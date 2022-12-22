@@ -1,4 +1,4 @@
-@import  "../../style.scss";
+@import "../../style.scss";
 
 .navbar {
   @include themify($themes) {
@@ -11,12 +11,14 @@
     position: sticky;
     top: 0;
     background-color: themed("bg");
-    color:themed("textColor");
+    color: themed("textColor");
     z-index: 999;
+
     .left {
       display: flex;
       align-items: center;
       gap: 30px;
+
       span {
         font-weight: bold;
         font-size: 20px;
@@ -35,7 +37,11 @@
           border: none;
           width: 500px;
           background-color: transparent;
-          color:themed("textColor");
+          color: themed("textColor");
+
+          @include mobile {
+            display: none;
+          }
         }
       }
     }
@@ -45,11 +51,26 @@
       align-items: center;
       gap: 20px;
 
+      @include mobile {
+        display: none;
+      }
+
+      @include tablet {
+        width: 200px;
+      }
+
+
+
       .user {
         display: flex;
         align-items: center;
         gap: 10px;
         font-weight: 500;
+
+        @include tablet {
+          display: none;
+        }
+
         img {
           width: 30px;
           height: 30px;
@@ -57,8 +78,8 @@
 
           object-fit: cover;
         }
-        span {
-        }
+
+        span {}
       }
     }
   }
