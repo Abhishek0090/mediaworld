@@ -46,6 +46,7 @@ const Register = () => {
             <input type="text" placeholder='Name' name="name" onChange={handleChange} />
             <button onClick={register}>Register</button>
           </form>
+          {err && err}
         </div>
         <div className='right'>
           <h1>Abhi Sup</h1>

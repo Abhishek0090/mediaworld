@@ -10,8 +10,15 @@ import commentRoutes from "./routes/comments.js"; //use .js for avoiding error
 import cookieParser from "cookie-parser";
 
 ///middlewares
+app.use((req,res,next)=>{
+  res.header("Access-Control-Allow-Credentials")  //for sending our cookies on client
+
+  next();
+})
 app.use(express.json()); //for accepting data  in json form
-app.use(cors());
+app.use(cors({
+  origin:"http://localhost:3000"
+}));  //wrting client url
 app.use(cookieParser());
 
 app.get('/', (req, res) => {
