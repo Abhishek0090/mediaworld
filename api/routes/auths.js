@@ -6,9 +6,9 @@ const router = express.Router();
 
 
 
-router.get('login',login);
-router.get('register',register);
-router.get('logout',logout);
+router.post('/login',login);
+router.post('/register',register);
+router.post('/logout',logout);
 
 
  
