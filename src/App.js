@@ -17,6 +17,7 @@ import { useContext } from "react";
 import './style.scss';
 import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/authContext";
+import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query';
 
 
 function App() {
@@ -25,7 +26,9 @@ function App() {
 
   const {darkMode} = useContext(DarkModeContext);
 
-  console.log(darkMode);
+  const queryClient = new QueryClient()
+
+  // console.log(darkMode);
 
   const Layout = () => {
     return (
