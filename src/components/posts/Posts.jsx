@@ -14,13 +14,19 @@ const Posts = () => {
         })
     );
 
+    console.log(data);
+
     return (
 
         <div className='posts'>
-            {
-                data.map(post => (
-                    <Post post={post} key={post.id} />
-                ))
+        {/* <div>Multiple Ternary Operators</div> */}
+            {error
+                ? "Something Went Wrong"
+                : isLoading
+                    ? "loading"
+                    : data.map(post => (
+                        <Post post={post} key={post.id} />
+                    ))
             }
         </div>
     )

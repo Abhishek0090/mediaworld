@@ -9,9 +9,11 @@ import likeRoutes from "./routes/likes.js"; //use .js for avoiding error
 import commentRoutes from "./routes/comments.js"; //use .js for avoiding error
 import cookieParser from "cookie-parser";
 
+import multer from "multer";
+
 ///middlewares
-app.use((req,res,next)=>{
-  res.header("Access-Control-Allow-Credentials",true)  //for sending our cookies on client
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Credentials", true)  //for sending our cookies on client
 
   next();
 })
@@ -19,12 +21,30 @@ app.use(express.json()); //for accepting data  in json form
 
 
 app.use(cors({
-  origin:"http://localhost:3000"
+  origin: "http://localhost:3000"
 }));  //wrting client url.
 
 
 
 app.use(cookieParser());
+
+//for imge uploading 
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, '../public/upload')
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + file.originalname)
+  }
+})
+
+const upload = multer({ storage: storage })
+
+app.post("/api/upload", upload.single("file"), (req, res) => {
+  const file = req.file;
+  res.status(200).json(file.filename);
+})
 
 app.get('/', (req, res) => {
   return res.json(["Hello bro"]);
