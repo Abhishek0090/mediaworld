@@ -7,6 +7,7 @@ import authRoutes from "./routes/auths.js"; //use .js for avoiding error
 import postRoutes from "./routes/posts.js"; //use .js for avoiding error
 import likeRoutes from "./routes/likes.js"; //use .js for avoiding error
 import commentRoutes from "./routes/comments.js"; //use .js for avoiding error
+import relationshipRoutes from "./routes/relationships.js"; 
 import cookieParser from "cookie-parser";
 
 import multer from "multer";
@@ -53,6 +54,7 @@ app.use('/api/posts', postRoutes);
 app.use('/api/likes', likeRoutes);
 app.use('/api/comments', commentRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/relationship', relationshipRoutes);
 
 app.listen(port, () => {
   console.log(`Your website is running on http://localhost:${port}`);
