@@ -22,7 +22,7 @@ const Posts = () => {
         {/* <div>Multiple Ternary Operators</div> */}
             {error
                 ? "Something Went Wrong"
-                : isLoading
+                : isLoading 
                     ? "loading"
                     : data.map(post => (
                         <Post post={post} key={post.id} />

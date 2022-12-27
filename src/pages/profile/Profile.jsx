@@ -9,18 +9,33 @@ import LanguageIcon from '@mui/icons-material/Language';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { useContext } from 'react';
+import { useQueryClient, useQuery, useMutation } from '@tanstack/react-query';
+import { makeRequest } from '../../axios';
 import { AuthContext } from '../../context/authContext';
 import Posts from '../../components/posts/Posts';
+import { useLocation } from 'react-router-dom';
 
 const Profile = () => {
 
   const { currentUser } = useContext(AuthContext);
 
+  const userId = useLocation().pathname.split("/")[2]  //for getting userid from url
+
+
+  const { isLoading, error, data } = useQuery(['user'], () =>
+
+    makeRequest.get("/users/find/" + userId).then((res) => {
+      return res.data;
+    })
+  );
+
+  // console.log(data)
+
   return (
     <div className='profile'>
       <div className='images'>
-        <img src=" https://images.pexels.com/photos/102061/pexels-photo-102061.jpeg?auto=compress&cs=tinysrgb&w=600 " className='cover' alt="cover" />
-        <img src={currentUser.profilePicture} className="profilePic" alt="profile" />
+        <img src={data.coverPic} className='cover' alt="cover" />
+        <img src={data.profilePic} className="profilePic" alt="profile" />
       </div>
       <div className='profileContainer'>
         <div className='userInfo'>
@@ -53,7 +68,7 @@ const Profile = () => {
                 <span>abhi.codex</span>
               </div>
             </div>
-              <button>Follow</button>
+            <button>Follow</button>
           </div>
           <div className='right'>
             <EmailOutlinedIcon />
@@ -61,7 +76,7 @@ const Profile = () => {
           </div>
         </div>
       </div>
-      <Posts/>
+      <Posts />
 
     </div>
   )

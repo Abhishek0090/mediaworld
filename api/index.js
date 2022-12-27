@@ -46,9 +46,7 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
   res.status(200).json(file.filename);
 })
 
-app.get('/', (req, res) => {
-  return res.json(["Hello bro"]);
-})
+ 
 
 app.use('/api/users', userRoutes);
 app.use('/api/posts', postRoutes);

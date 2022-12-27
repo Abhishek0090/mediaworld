@@ -28,6 +28,8 @@ const Share = () => {
 
   const { currentUser } = useContext(AuthContext);
 
+  console.log(currentUser.profilePic);
+
   const queryClient = useQueryClient();
 
   const mutation = useMutation(
@@ -65,6 +67,9 @@ const Share = () => {
               value={desc}
             />
           </div>
+
+          {/*Creating image preview*/}
+
           <div className="right">
             {file && (
               <img className="file" alt="" src={URL.createObjectURL(file)} />
