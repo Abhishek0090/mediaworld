@@ -57,15 +57,15 @@ const Profile = () => {
             </a>
           </div>
           <div className='center'>
-            <span>Abhishek Pal</span>
+            <span>{data.name}</span>
             <div className='info'>
               <div className='item'>
                 <PlaceIcon fontSize='small' />
-                <span>India</span>
+                <span>{data.city}</span>
               </div>
               <div className='item'>
                 <LanguageIcon fontSize='small' />
-                <span>abhi.codex</span>
+                <span>{data.website}</span>
               </div>
             </div>
             <button>Follow</button>
