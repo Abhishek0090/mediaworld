@@ -67,7 +67,7 @@ export const logout = (req, res) => {
     res.clearCookie("accessToken", {
         secure: true,
         sameSite: "none" //for restricting the blockage of website while clearing cookie
-    }).status(200).json("User has been Logged out"); 
+    }).status(200).json("User has been Logged out");
 
 }
 

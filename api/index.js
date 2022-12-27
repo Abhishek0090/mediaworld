@@ -11,14 +11,19 @@ import cookieParser from "cookie-parser";
 
 ///middlewares
 app.use((req,res,next)=>{
-  res.header("Access-Control-Allow-Credentials")  //for sending our cookies on client
+  res.header("Access-Control-Allow-Credentials",true)  //for sending our cookies on client
 
   next();
 })
 app.use(express.json()); //for accepting data  in json form
+
+
 app.use(cors({
   origin:"http://localhost:3000"
-}));  //wrting client url
+}));  //wrting client url.
+
+
+
 app.use(cookieParser());
 
 app.get('/', (req, res) => {

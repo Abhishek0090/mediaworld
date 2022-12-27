@@ -26,6 +26,7 @@ const Register = () => {
 
     try {
       await axios.post('http://localhost:8800/api/auth/register',inputs);
+      
     } catch (error) {
         console.log(error);
       setErr(err.response.data)
