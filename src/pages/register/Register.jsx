@@ -1,9 +1,11 @@
 import axios from 'axios';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import './register.scss';
- 
+
 const Register = () => {
+
+  const navigate = useNavigate();
 
   const [inputs, setInputs] = useState({
     username: "",
@@ -16,24 +18,24 @@ const Register = () => {
 
 
   const handleChange = e => {
-    setInputs(prev=>({...prev,[e.target.name]:e.target.value}))
+    setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }))
     console.log(inputs)
   }
 
 
-  const register = async (e)=>{
+  const register = async (e) => {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:8800/api/auth/register',inputs);
-      
+      await axios.post('http://localhost:8800/api/auth/register', inputs);
+      navigate("/");
     } catch (error) {
-        console.log(error);
+      console.log(error);
       setErr(err.response.data)
     }
   }
 
-  console.log(err);
+  // console.log(err);
 
   return (
     <div className="register">
@@ -56,7 +58,7 @@ const Register = () => {
           <span>Do You have an Account</span>
           <Link to="/login">
 
-            <button>Login</button> 
+            <button>Login</button>
           </Link>
         </div>
 

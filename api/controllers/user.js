@@ -35,12 +35,12 @@ export const updateUser = (req, res) => {
 
         const q = "UPDATE users SET `name`=?,`city`=? , `website`=? , `coverPic`=? , `profilePic`=? WHERE id=?";
 
-        const values = [req.body.name, req.body.city, req.body.website, req.body.coverPic, req.body.profilePic   , userInfo.id];
+        const values = [req.body.name, req.body.city, req.body.website, req.body.coverPic, req.body.profilePic, userInfo.id];
 
         db.query(q, values, (err, data) => {
             if (err) return res.status(500).json(err);
 
-            if(data.affectedRows > 0) return res.json("Updated!")
+            if (data.affectedRows > 0) return res.json("Updated!")
 
 
             return res.status(403).json("You can update Only Your Post !");

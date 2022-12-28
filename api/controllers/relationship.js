@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken";
 
 export const getRelationShips = (req, res) => {
 
-    const q = "SELECT  followerUserId FROM relationships WHERE followerUserId =?";
+    const q = "SELECT  followerUserId FROM relationship WHERE followerUserId =?";
 
     db.query(q, [req.query.followerUserId], (err, data) => {
         if (err) return res.status(500).json(err)
@@ -27,7 +27,7 @@ export const addRelationShip = (req, res) => {
         if (err) return res.status(403).json("Token is not valid");
 
 
-        const q = "INSERT INTO relationships( `followedUserId`,`followerUserId`) VALUES (?)";
+        const q = "INSERT INTO relationship ( `followedUserId`,`followerUserId`) VALUES (?)";
         const values = [
             userInfo.id,
             req.body.userId
@@ -56,7 +56,7 @@ export const deleteRelationShip = (req, res) => {
         if (err) return res.status(403).json("Token is not valid");
 
 
-        const q = "DELETE FROM relationships WHERE `followedUserId` = ? AND `followerUserId` = ?";
+        const q = "DELETE FROM relationship WHERE `followedUserId` = ? AND `followerUserId` = ?";
 
 
         db.query(q, [userInfo.id, req.query.userId], (err, data) => {

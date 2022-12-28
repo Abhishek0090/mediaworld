@@ -104,18 +104,18 @@ const Profile = () => {
                   <span>{data.website}</span>
                 </div>
               </div>
-              {risLoading ? "loading" : userId === currentUser.id ? (<button>update</button>) : <button onClick={handleFollow}>{relationshipData?.includes(currentUser.id) ? "Following" : "Follow"}</button>}
+              {risLoading ? "loading" : userId === currentUser.id ? (<button onClick={()=>setOpenUpdate(true)}>update</button>) : <button onClick={handleFollow}>{relationshipData?.includes(currentUser.id) ? "Following" : "Follow"}</button>}
             </div>
             <div className='right'>
               <EmailOutlinedIcon />
               <MoreVertIcon />
             </div>
           </div>
-          <Posts userId={userId} />
         </div>
+        <Posts userId={userId} />
       </>
       }
-      {openUpdate && <Update setOpenUpdate={setOpenUpdate}  user={data} />}
+      {openUpdate && <Update setOpenUpdate={setOpenUpdate} user={data} />}
     </div>
   )
 }
