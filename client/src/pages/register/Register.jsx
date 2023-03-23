@@ -53,7 +53,7 @@ const Register = () => {
         </div>
         <div className='right'>
           <h1>Abhi Sup</h1>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro id impedit omnis
+          <p>Welcome Back Home You are Doing Good
           </p>
           <span>Do You have an Account</span>
           <Link to="/login">
